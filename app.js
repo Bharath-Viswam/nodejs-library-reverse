@@ -2,9 +2,6 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors'); //?what is this
 const bodyParser = require('body-parser'); //*2.Body parser not imported
-//*TODO login and signup validation databaseil ula users matram login aya mati
-//*error occurs after one user has signuped, then any user can login
-//*this is something that needsto be fixed
 
 const port = process.env.PORT || 5000;
 const nav = [
@@ -37,7 +34,7 @@ app.use(cors({ orgin: [ 'https://www.section.io', 'https://www.google.com/' ] })
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({ extended: false })); //*(4)another error here
+app.use(bodyParser.urlencoded({ extended: false })); //*(2)another error here
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
